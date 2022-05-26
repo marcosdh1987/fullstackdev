@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(0, 255, 30);
+            margin: 10px;
+        } */
+    </style>
+</head>
+<body>
+
+    <div>
+        <h2>Ingrese un numero</h2>
+        <input type="text" id="numero1" placeholder="0.00">
+        <input type="text" id="numero2" placeholder="0.00">
+        <input type="text" id="operacion" value="+">  
+        </div>
+        <select id="select">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <button onclick="operar(select.value)">Operar</button>
+        <!-- <button onclick="operar(operacion.value)">Operar</button> -->
+        <!-- <button onclick="restar(numero1.value, numero2.value)">Restar</button> -->
+        
+        <div id="resultado"></div>
+        
+        <script>
+    
+            function operar(operacion) {
+                var numero1 = parseFloat(document.getElementById("numero1").value);
+                var numero2 = parseFloat(document.getElementById("numero2").value);
+                var resultado = 0;
+                switch(operacion) {
+                    case "+":
+                        resultado = numero1 + numero2;
+                        break;
+                    case "-":
+                        resultado = numero1 - numero2;
+                        break;
+                    case "*":
+                        resultado = numero1 * numero2;
+                        break;
+                    case "/":
+                        resultado = numero1 / numero2;
+                        break;
+                }
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+    
+            function sumar(){
+                num1 = parseFloat(numero1.value);
+                num2 = parseFloat(numero2.value);
+    
+                resultado = num1 + num2;
+                console.log(resultado);
+                document.getElementById("resultado").innerHTML = resultado;
+                if (resultado > 0) {
+                    document.getElementById("resultado").style.backgroundColor = "green";
+                } else {
+                    document.getElementById("resultado").style.backgroundColor = "red";
+                }
+    
+            }
+            function restar(numero1, numero2){
+                num1 = parseFloat(numero1);
+                num2 = parseFloat(numero2);
+                resultado = num1 - num2;
+                console.log(resultado);
+                document.getElementById("resultado").innerHTML = resultado;
+    
+    
+            }
+    
+            
+    
+    
+        </script>
+</body>
+</html>
